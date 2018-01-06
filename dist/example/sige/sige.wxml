@@ -1,0 +1,47 @@
+<!--
+name:产品名
+photo:图片
+url:连接地址
+price:价格
+-->
+
+<template name="sige">
+  <block wx:if="{{listdata.format}}">
+    <view class="weui-siges">
+      <block wx:for="{{listdata.sige}}" wx:key="*this">
+        <navigator url="{{item[listdata.format.url]}}" class="weui-sige" hover-class="weui-sige_active">
+          <image class="sige-photo" src="{{item[listdata.format.photo]}}" />
+          <view class="sige-name sige-ellipsis">{{item[listdata.format.name]}}</view>
+          <view style="display:flex;line-height:50rpx;padding:10rpx 0;">
+            <view class="sige-price">¥ {{item[listdata.format.price]}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="weui-siges">
+      <block wx:for="{{sige}}" wx:key="*this">
+        <navigator url="{{item.url}}" class="weui-sige" hover-class="weui-sige_active">
+          <image class="sige-photo" src="{{item.photo}}" />
+          <view class="sige-name sige-ellipsis">{{item.name}}</view>
+          <view style="display:flex;line-height:50rpx;padding:10rpx 0;">
+            <view class="sige-price">¥ {{item.price}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </block>
+</template>
+
+<view class="page__hd">
+  <view class="page__title">sige</view>
+  <view class="page__desc">
+    四格.两种使用形式.
+    一种是数组下标不匹配的形式 需要给出字段
+    另一种是标准格式 就不需要这些了
+  </view>
+</view>
+
+<template is="sige" data="{{listdata}}" />
+<template is="sige" data="{{sige}}" />

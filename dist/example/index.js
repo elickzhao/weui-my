@@ -11,7 +11,7 @@ Page({
                 id: 'widget',
                 name: '基础组件',
                 open: false,
-                pages: ['article', 'badge', 'flex', 'footer', 'gallery', 'grid', 'icons', 'loadmore', 'panel', 'preview', 'progress']
+                pages: ['article', 'badge', 'flex', 'footer', 'gallery', 'grid','icons', 'loadmore', 'panel', 'preview', 'progress']
             },
             {
                 id: 'feedback',
@@ -30,6 +30,12 @@ Page({
                 name: '搜索相关',
                 open: false,
                 pages: ['searchbar']
+            },
+            {
+                id: 'z-index',
+                name: '我的组件',
+                open: false,
+                pages: ['sige','goodslist']
             }
         ]
     },

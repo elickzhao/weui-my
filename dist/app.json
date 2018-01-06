@@ -1,13 +1,11 @@
 {
   "pages": [
     "example/index",
-
     "example/button/button",
     "example/list/list",
     "example/input/input",
     "example/slider/slider",
     "example/uploader/uploader",
-
     "example/article/article",
     "example/badge/badge",
     "example/flex/flex",
@@ -19,7 +17,6 @@
     "example/panel/panel",
     "example/preview/preview",
     "example/progress/progress",
-
     "example/actionsheet/actionsheet",
     "example/dialog/dialog",
     "example/msg/msg",
@@ -27,11 +24,11 @@
     "example/msg/msg_fail",
     "example/picker/picker",
     "example/toast/toast",
-
     "example/navbar/navbar",
     "example/tabbar/tabbar",
-
-    "example/searchbar/searchbar"
+    "example/searchbar/searchbar",
+    "example/sige/sige",
+    "example/goodslist/goodslist"
   ],
   "window": {
     "navigationBarTextStyle": "black",

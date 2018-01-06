@@ -1,0 +1,64 @@
+<!--
+id:商品id
+name:产品名
+photo:图片
+url:连接地址
+price:价格
+shiyong:购买量
+-->
+
+<template name="goodslist">
+  <block wx:if="{{listdata.format}}">
+    <block wx:for="{{listdata.goodslist}}" wx:key="*this" data-id="{{item.id}}">
+      <view class="goodslist-ban">
+        <navigator url="{{item[listdata.format.url]}}{{item.id}}">
+          <image src="{{item[listdata.format.photo]}}" mode="widthFix"></image>
+          <view class="ellipsis">
+            <text class="goodslist-type">{{item[listdata.format.name]}}</text>
+          </view>
+          <view>
+            <text style="color:red">¥ {{item[listdata.format.price]}}</text>
+          </view>
+          <view>
+            <text style="color:#999999;font-size:25rpx">已有{{item[listdata.format.shiyong]}}人购买</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:for="{{goodslist}}" wx:key="*this" data-id="{{item.id}}">
+      <view class="goodslist-ban">
+        <navigator url="{{item.url}}{{item.id}}">
+          <image src="{{item.photo}}" mode="widthFix"></image>
+          <view class="ellipsis">
+            <text class="goodslist-type">{{item.name}}</text>
+          </view>
+          <view>
+            <text style="color:red">¥ {{item.price}}</text>
+          </view>
+          <view>
+            <text style="color:#999999;font-size:25rpx">已有{{item.shiyong}}人购买</text>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </block>
+</template>
+
+
+<view class="page__hd">
+  <view class="page__title">goodslist</view>
+  <view class="page__desc">
+    商品列表形式.两种使用形式.
+    一种是数组下标不匹配的形式 需要给出字段
+    另一种是标准格式 就不需要这些了
+  </view>
+</view>
+
+
+<template is="goodslist" data="{{listdata}}" />
+
+=========================================================
+
+<template is="goodslist" data="{{goodslist}}" />
